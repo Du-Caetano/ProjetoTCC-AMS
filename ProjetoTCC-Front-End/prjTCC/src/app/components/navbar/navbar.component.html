@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/96e60b07bc.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>Navbar</title>
+  </head>
+  <body>
+    <nav>
+      <a class="logo" routerLink="">Combo</a>
+
+      <ul class="nav-list">
+        <li><a class="text" href="">Início</a></li>
+        <li><a routerLink="/produtos" routerLinkActive="selected">Produtos</a></li>
+        <li>
+          <a href="#promo" routerLinkActive="selected"
+            ><div class="sac">Promoções</div></a
+          >
+        </li>
+      </ul>
+
+      <button routerLink="/carrinho"style="background: none; border:none; color:aliceblue; " class="byn btn-primary">
+        <i style="font-size: 35px; padding: 5px;" class="fas fa-cart-plus"></i>
+        <div style="font-size: 20px;" class="badge bg-danger">{{totalItem}}</div>
+      </button>
+
+      <a style="font-size: 20px; opacity: 100;" class="User">
+        <div class="icone">
+        <div class="con">
+          <i style ="font-size: 20px;"class="fa-regular fa-circle-user"><br>
+          <p>Fazer <a routerLink="/login" style="margin-bottom: - 15px; color: #4aa4ee">login</a> ou<br><p><a routerLink="/singup" style="margin-top: 5px; color: #4aa4ee">Cadastrar-se</a></p>
+      </i>
+    </div>
+        </div>
+        </a>
+
+    </nav>
+  </body>
+</html>

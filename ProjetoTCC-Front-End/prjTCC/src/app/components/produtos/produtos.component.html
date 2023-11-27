@@ -1,0 +1,70 @@
+<app-navbar></app-navbar>
+<!-- <input type="text" class="input-search" [(ngModel)]="searchTerm" (keyup)="search($event)"> -->
+
+  <div class="container">
+    <div class="categorias">
+      <div ngbDropdown class="d-inline-block">
+        <button
+          type="button"
+          class="btn btn-outline-primary"
+          id="dropdownBasic1"
+          ngbDropdownToggle
+        >
+          Categorias
+        </button>
+
+        <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+          <button ngbDropdownItem (click)="filter('Computadores')">Computadores</button>
+          <hr />
+          <button ngbDropdownItem (click)="filter('Notebook')">Notebook</button>
+          <hr />
+          <button ngbDropdownItem (click)="filter('Periféricos')">Periféricos</button>
+          <hr />
+          <button ngbDropdownItem (click)="filter('Acessórios')">Acessórios</button>
+          <hr />
+          <button ngbDropdownItem (click)="filter('Memorias')"> Memorias</button>
+          <hr />
+          <button ngbDropdownItem  (click)="filter('Placa mãe')">Placa Mãe</button>
+          <hr />
+          <button ngbDropdownItem  (click)="filter('Refrigeração')">Refrigeração</button>
+          <hr />
+          <button ngbDropdownItem  (click)="filter('Fontes')">Fontes</button>
+          <hr />
+          <button ngbDropdownItem  (click)="filter('Processadores')">Processadores</button>
+          <hr />
+          <button ngbDropdownItem  (click)="filter('Placa de Vídeo')">Placa de Vídeo</button>
+          <hr />
+          <button ngbDropdownItem  (click)="filter('Diversos')">Diversos</button>
+          <hr />
+          <button ngbDropdownItem  (click)="filter('Promoções')">Promoções</button>
+          <hr />
+          <button ngbDropdownItem  (click)="filter('')">Todos os Produtos</button>
+        </div>
+        
+      </div>
+      </div>
+    <div class="row">
+
+
+
+    <ng-container *ngFor="let item of filterCategory | filter:searchKey:'idCategory'">
+
+  <div class="card">
+  <div class="imgBx">
+    <img
+      src="{{item.urlImage}}"
+      alt=""
+    />
+  </div>
+  <div class="contentBx">
+    <h3>{{item.name}}</h3>
+    <h2 class="price">R$ {{item.price}}</h2>
+    <h3>{{item.description}}</h3>
+    <a class="buy"(click)=addtocart(item) routerLink="/carrinho">Adicionar ao Carrinho</a>
+  </div>
+</div>
+
+</ng-container>
+</div>
+  </div>
+
